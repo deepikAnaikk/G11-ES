@@ -1,0 +1,28 @@
+1).Why can't we assign unsigned and signed for float and double data types?           Answer:Because they inherently include a sign bit to represent both positive and negative values. Floating-point numbers are designed with a combination of sign, exponent, and mantissa to accommodate a wide range of values, including fractions and very large or very small numbers. The inclusion of an unsigned variant would complicate their design without providing practical benefits, as their current representation already covers the necessary range and precision for most applications. Consequently, the concept of unsigned types is specific to integers and doesn't apply to floating-point numbers.
+2).Try to assign -ve values with unsigned short.              
+ Answer:
+#include <stdio.h>
+
+int main() {
+    unsigned short value = -1;
+    printf("Value: %u\n", value); // Output will be 65535
+    return 0;
+}
+3).Try relational operators with charactr data type.            Answer:relational operators can be used with the char data type, just like with other integer types. Characters are internally represented by their ASCII values (or another character encoding), so relational comparisons are based on these integer values. For Example:
+#include <stdio.h>
+
+int main() {
+    char a = 'a'; // ASCII value 97
+    char b = 'b'; // ASCII value 98
+    char c = 'a'; // ASCII value 97
+
+    printf("a < b: %d\n", a < b);  // Output will be 1 (true)
+    printf("a > b: %d\n", a > b);  // Output will be 0 (false)
+    printf("a == c: %d\n", a == c); // Output will be 1 (true)
+    printf("a != b: %d\n", a != b); // Output will be 1 (true)
+
+    return 0;
+}
+
+
+
