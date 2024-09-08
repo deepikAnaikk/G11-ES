@@ -1,0 +1,273 @@
+1).All the commands that can be given in C Shell.          
+Answer:Basic Commands
+cd: Change directory.
+ls: List directory contents.
+pwd: Print working directory.
+cp: Copy files or directories.
+mv: Move or rename files or directories.
+rm: Remove files or directories.
+mkdir: Create a new directory.
+rmdir: Remove empty directories.
+chmod: Change file modes or Access Control Lists.
+chown: Change file owner and group.
+grep: Search text using patterns.
+find: Search for files in a directory hierarchy.
+man: Display the manual for a command.
+Built-in Commands	
+alias: Define or display aliases.
+unalias: Remove alias definitions.
+echo: Display a line of text.
+set: Set shell variables.
+setenv: Set environment variables.
+unset: Unset shell variables.
+unsetenv: Unset environment variables.
+source: Execute commands from a file.
+foreach: Loop over a list of values.
+while: Loop while a condition is true.
+if: Conditional execution.
+switch: Conditional execution based on multiple choices.
+break: Exit from a loop.
+continue: Continue with the next iteration of a loop.
+exit: Exit the shell or script.
+limit: Set or display resource limits.
+history: Display or manipulate command history.
+nohup: Run a command immune to hangups.
+jobs: Display information about jobs.
+fg: Bring a background job to the foreground.
+bg: Run a job in the background.
+Scripting Commands
+foreach: Iterates over a list of items.
+while: Executes a block of code while a condition is true.
+if: Executes a block of code based on a condition.
+switch: Executes a block of code based on a value.
+Command Substitution and Redirection
+>: Redirect output to a file (overwrite).
+>>: Redirect output to a file (append).
+<: Redirect input from a file.
+|: Pipe output from one command to another.
+Special Characters
+*: Wildcard for zero or more characters.
+?: Wildcard for a single character.
+~: Represents the home directory.
+Command Execution
+&: Run a command in the background.
+;: Separate commands to be executed sequentially.
+&&: Execute the second command only if the first succeeds.
+||: Execute the second command only if the first fails.
+Job Control
+jobs: List active jobs.
+bg: Resume a job in the background.
+fg: Bring a job to the foreground.
+kill: Send signals to processes.
+Other Useful Commands
+date: Display or set the system date and time.
+ps: Display information about running processes.
+top: Display a dynamic view of system processes.
+kill: Terminate processes by ID or name..
+
+2).Create an Obj file in c without generating an exe file. 
+Steps to create an .obj file without generating an executable:
+Write your C code: For example, create a simple C file named example.c:
+
+// example.c
+#include <stdio.h>
+
+void hello() {
+    printf("Hello, World!\n");
+}
+
+Compile without linking:
+Use the -c flag in gcc to compile the source file into an object file, but not link it to create an executable.
+
+Here's the command:
+gcc -c example.c -o example.obj
+
+Explanation of command:
+gcc: The GNU C Compiler command.
+-c: This tells the compiler to generate an object file (.obj on Windows, .o on Linux) and not link it.
+example.c: Your C source file.
+-o example.obj: Specifies the name of the output object file (example.obj).
+
+3).What are the flags that can be passed to C compiler.
+
+General Flags
+-c
+Compile the source code into an object file without linking. This is used to create .o or .obj files.
+gcc -c file.c
+
+-o <file>
+Specify the name of the output file (can be executable or object file).
+gcc file.c -o output_executable
+
+-Wall
+Enable all common warning messages.
+gcc file.c -Wall
+
+-Werror
+Treat all warnings as errors.
+gcc file.c -Werror
+
+-I <dir>
+Add a directory to the list of directories searched for header files (.h files).
+gcc -I /path/to/headers file.c
+
+-L <dir>
+Add a directory to the list of directories searched for libraries during linking.
+gcc -L /path/to/libs -o file file.c
+
+-l <library>
+Link with a library. For example, -lm links with the math library.
+gcc file.c -lm
+
+Debugging Flags
+-g
+Generate debugging information to be used with debugging tools such as gdb.
+gcc -g file.c
+
+-ggdb
+Produce debugging information specifically for gdb.
+gcc -ggdb file.c
+
+Optimization Flags
+-O0
+No optimization (default). The compiler focuses on reducing compile time.
+gcc -O0 file.c
+
+-O1
+Basic optimization. This reduces code size and execution time without increasing compilation time significantly.
+gcc -O1 file.c
+
+-O2
+Further optimization. Increases both compile time and execution time efficiency.
+gcc -O2 file.c
+
+-O3
+Maximum optimization, including aggressive optimizations.
+gcc -O3 file.c
+
+-Os
+Optimize for size. This enables all optimizations that don't increase the size of the code.
+gcc -Os file.c
+
+Linking Flags
+-static
+Statically link libraries. This bundles all libraries into the executable, which can make the binary larger but self-contained.
+gcc -static file.c -o file
+
+-shared
+Create a shared library (.so file on Linux or .dll on Windows).
+gcc -shared -o libexample.so file.c
+
+-fPIC
+Generate position-independent code, necessary when creating shared libraries.
+gcc -fPIC -shared -o libexample.so file.c
+
+Profiling and Analysis Flags
+-pg
+Enable profiling for performance analysis using gprof.
+gcc -pg file.c
+
+-fprofile-generate
+Enable generation of profile information for profile-guided optimization.
+gcc -fprofile-generate file.
+
+-fprofile-use
+Use profile information from previous runs to optimize the current run.
+gcc -fprofile-use file.c
+
+Architecture-specific Flags
+-march=<arch>
+Generate code for a specific architecture (e.g., -march=native for the local machine's architecture).
+gcc -march=native file.c
+
+-m32 / -m64
+Compile the program for 32-bit or 64-bit architecture.
+gcc -m32 file.c
+
+Preprocessor Flags
+-D<macro>
+Define a macro for use in the code.
+gcc -DDEBUG file.c
+
+-U<macro>
+Undefine a macro.
+gcc -UDEBUG file.c
+
+Miscellaneous Flags
+-E
+Preprocess the file but don’t compile. This outputs the preprocessed code to standard output.
+gcc -E file.c
+
+-S
+Compile the file to assembly code (.s file).
+gcc -S file.c
+
+-v
+Verbose output to see exactly what the compiler is doing.
+gcc -v file.c
+
+--version
+Show the version of the compiler.
+gcc --version
+
+Summary Table of Common Flags
+Flag	Purpose
+-c:	Compile without linking
+-o:	Specify output file
+-Wall:	Enable all warnings
+-Werror:	Treat warnings as errors
+-g:	Generate debugging information
+-O[0-3]:	Optimization levels
+-shared:	Create shared library
+-static:	Statically link libraries
+-pg:	Enable profiling
+-march:	Generate code for a specific architecture
+-E:	Preprocess only (no compilation)
+-S:	Compile to assembly
+
+
+4).Give inputs to program using command line.
+The C language provides a method to pass parameters to the main() function. This is
+typically accomplished by specifying arguments on the operating system command line
+(console).
+The prototype for main() looks like:
+int main(int argc, char *argv[])
+ {
+ …
+ }
+There are two parameters passed to main(). The first parameter is the number of items
+on the command line (int argc). Each argument on the command line is separated by
+one or more spaces, and the operating system places each argument directly into its own
+null-terminated string. The second parameter passed to main() is an array of pointers
+to the character strings containing each argument (char *argv[]).
+For example, at the command prompt:
+test_prog 1 apple orange 4096.0
+There are 5 items on the command line, so the operating system will set argc=5 . The
+parameter argv is a pointer to an array of pointers to strings of characters, such that:
+argv[0] is a pointer to the string “test_prog”
+argv[1] is a pointer to the string “1”
+argv[2] is a pointer to the string “apple”
+argv[3] is a pointer to the string “orange”
+and
+argv[4] is a pointer to the string “4096.0”
+Notes
+• The main() routine can check argc to see how many arguments the user
+specified.
+• The minimum count for argc is 1: the command line just contained the name of
+the invoked program with no arguments.
+• The program can find out its own name as it was invoked: it is stored in the
+argv[0] string! Some operating systems don't provide this feature, however.
+• The arguments from the command line are not automatically converted: the
+characters are just copied into the argv strings. 
+•If an argument on the command line is to be interpreted as a numerical constant,
+such as argv[1] and argv[4] in this example, it can be converted using a
+string conversion.
+int int_val; float float_val;
+sscanf(argv[1],”%d”,&int_val);
+sscanf(argv[4],”%f”,&float_val);
+and
+printf(“The 3rd and 4th items on the command line are %s and
+%s\n”, argv[2], argv[3]);
+results in:
+The 3rd and 4th items on the command line are apple and orange
+The string functions atoi(), atol(), atof(), etc., will also work.
