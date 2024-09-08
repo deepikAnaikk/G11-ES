@@ -1,0 +1,70 @@
+1).All the commands that can be given in C Shell.          
+Answer:Basic Commands
+cd: Change directory.
+ls: List directory contents.
+pwd: Print working directory.
+cp: Copy files or directories.
+mv: Move or rename files or directories.
+rm: Remove files or directories.
+mkdir: Create a new directory.
+rmdir: Remove empty directories.
+chmod: Change file modes or Access Control Lists.
+chown: Change file owner and group.
+grep: Search text using patterns.
+find: Search for files in a directory hierarchy.
+man: Display the manual for a command.
+Built-in Commands	
+alias: Define or display aliases.
+unalias: Remove alias definitions.
+echo: Display a line of text.
+set: Set shell variables.
+setenv: Set environment variables.
+unset: Unset shell variables.
+unsetenv: Unset environment variables.
+source: Execute commands from a file.
+foreach: Loop over a list of values.
+while: Loop while a condition is true.
+if: Conditional execution.
+switch: Conditional execution based on multiple choices.
+break: Exit from a loop.
+continue: Continue with the next iteration of a loop.
+exit: Exit the shell or script.
+limit: Set or display resource limits.
+history: Display or manipulate command history.
+nohup: Run a command immune to hangups.
+jobs: Display information about jobs.
+fg: Bring a background job to the foreground.
+bg: Run a job in the background.
+Scripting Commands
+foreach: Iterates over a list of items.
+while: Executes a block of code while a condition is true.
+if: Executes a block of code based on a condition.
+switch: Executes a block of code based on a value.
+Command Substitution and Redirection
+>: Redirect output to a file (overwrite).
+>>: Redirect output to a file (append).
+<: Redirect input from a file.
+|: Pipe output from one command to another.
+Special Characters
+*: Wildcard for zero or more characters.
+?: Wildcard for a single character.
+~: Represents the home directory.
+Command Execution
+&: Run a command in the background.
+;: Separate commands to be executed sequentially.
+&&: Execute the second command only if the first succeeds.
+||: Execute the second command only if the first fails.
+Job Control
+jobs: List active jobs.
+bg: Resume a job in the background.
+fg: Bring a job to the foreground.
+kill: Send signals to processes.
+Other Useful Commands
+date: Display or set the system date and time.
+ps: Display information about running processes.
+top: Display a dynamic view of system processes.
+kill: Terminate processes by ID or name..
+
+2).Create an Obj file in c without generating an exe file.
+3).What are the flags that can be passed to C compiler.
+4).Give inputs to program using command line.
